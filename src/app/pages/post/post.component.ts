@@ -16,6 +16,7 @@ export class PostComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.blogService.getArticleBySlug(params?.slag).subscribe(article => {
         this.article = article;
+        console.log(this.article[0])
       })
     });
   }

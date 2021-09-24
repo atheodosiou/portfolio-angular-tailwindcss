@@ -84,3 +84,12 @@ body{
     --tw-gradient-from: #22d3ee;
     --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to,rgba(34,211,238,0));
 }
+
+.text-emerald {
+    --color-text-emerald: #10b981;
+    --color-text-emerald-hover: #059669;
+    color: var(--color-text-emerald);
+    &:hover{
+        color: var(--color-text-emerald-hover);
+    }
+}
