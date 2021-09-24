@@ -1,0 +1,197 @@
+<div class="min-h-screen px-4 mx-auto max-w-screen-sm md:max-w-2xl flex flex-col">
+  <main class="flex-grow">
+    <section class="mb-24">
+      <div class=" flex justify-between items-center relative">
+        <div class=" w-full space-y-8 md:flex-row-reverse md:justify-between">
+          <div class="text-left"><img src="assets/profile.jpeg" alt="Anastasios Theodosiou"
+              class="mt-8 mb-16 h-36 w-36 ml-3  rounded-full ring-4 ring-offset-8 ring-offset-primary ring-teal-500 dark:ring-teal-400 select-none">
+            <h2
+              class="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-teal-500 dark:text-teal-400 mb-3">
+              Hey there,</h2>
+            <h1 class="text-primary text-3xl sm:text-5xl lg:text-5xl leading-none font-extrabold tracking-tight mb-4">
+              I'm Anastasios.</h1>
+            <p class="text-secondary prose-lg">I'm a Front-end engineer with a passion for Angular.
+              Welcome to my corner of the internet. I'm glad you're here!</p>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-1/2 text-5xl leading-none text-coolGray-500 dark:text-coolGray-400 "></div>
+    </section>
+    <section class="mb-24">
+      <h2 class="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-indigo mb-3 text-indigo-500">Blog</h2>
+      <p class="text-primary text-3xl sm:text-5xl lg:text-5xl leading-none font-extrabold tracking-tight mb-10">Some
+        recent posts.</p>
+        <!-- Posts -->
+      <div class="mb-10" *ngFor="let article of articles$|async">
+        <a routerLink="/blog/{{article?.slug}}">
+          <div>
+            <p class="text-xl lg:text-2xl font-extrabold text-primary">{{article?.title}}</p>
+            <p class="mt-2 text-secondary prose-lg">{{article?.description}}</p>
+          </div>
+        </a></div>
+     <!-- Subscribe to newletter -->
+        <!-- <div class="mt-12">
+        <section>
+          <div class="bg-transparent">
+            <div class="w-full mx-auto ">
+              <div class="px-6 py-6 bg-secondary rounded-lg">
+                <div class="">
+                  <h2 class="text-xl lg:text-2xl font-bold tracking-tight text-primary sm:text-2xl">Articles delivered
+                    to your inbox!</h2>
+                  <div class="mt-2 space-y-3 text-secondary">
+                    <p class="text-secondary">A periodic update about my life, recent blog posts, how-tos, and
+                      discoveries.</p>
+                    <p>As a thank you, I'll also send you a <span class="font-bold text-indigo-hover">FREE CSS
+                        tutorial!</span></p>
+                    <p>No spam - unsubscribe at any time!</p>
+                  </div>
+                </div>
+                <div class="mt-8 w-full">
+                  <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+                    class="block email-form"><input type="hidden" name="form-name" value="newsletter">
+                    <div hidden="" aria-hidden="true"><label for="bot-field">Robot input...</label><input
+                        name="bot-field"></div><label for="emailAddress" class="sr-only">Email address</label><input
+                      id="emailAddress" name="emailAddress" type="email" autocomplete="email" required=""
+                      class="w-full px-4 py-2 placeholder-coolGray-500 focus:ring-indigo-500 focus:border-indigo-500 dark:focus:border-indigo-600 border-gray-300 rounded-md"
+                      placeholder="Enter your email"><button type="submit"
+                      class="flex items-center justify-center space-x-3 mt-3 px-4 py-2 shadow text-sm font-medium rounded-md text-white bg-button-indigo hover:bg-button-indigo-hover dark:hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-coolGray-100 dark:focus:ring-offset-blueGray-800 focus:ring-indigo-500 dark:focus:ring-white ml-0 w-full flex-shrink-0 md:text-base"><svg
+                        xmlns="http://www.w3.org/2000/svg" class="hidden md:block h-6 w-6" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
+                        </path>
+                      </svg><span>Subscribe &amp; get my free tutorial!</span></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div> -->
+    </section>
+    <!-- Projects -->
+    <section class="mb-24">
+      <h2 class="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-yellow-500 mb-3">Projects</h2>
+      <div class="text-primary text-3xl sm:text-5xl lg:text-5xl leading-none font-extrabold tracking-tight mb-4">
+        <p class="mb-2">I like to build things.</p>
+        <p class="mb-8">Here's a few.</p>
+      </div>
+      <ul class="grid grid-cols-1 gap-8  mt-12">
+        <li class="bg-gray-200 rounded-3xl" style="padding: 24px;">
+          To do
+        </li>
+        <!-- <li class="bg-secondary rounded-3xl">
+          <div class="p-6 md:p-10 flex flex-col-reverse ">
+            <div class="mt-8 md:max-w-lg">
+              <p class="text-2xl lg:text-3xl font-extrabold text-primary mb-2">bundleapps.io</p>
+              <p class="text-secondary prose-lg mb-3">A startup consultant company needed a website spun up quickly in
+                order to publish their first iOS application. Built with Tailwind UI, I was able to put something
+                together for them by the end of the day.</p><a href="https://bundleapps.io/" target="_blank"
+                rel="noreferrer">
+                <div
+                  class="inline-flex text-base sm:text-lg lg:text-base xl:text-lg font-medium transition-colors duration-200 focus:ring-2 focus:ring-offset-2 focus:ring-current focus:outline-none rounded-md text-orange hover:text-orange-hover mt-2">
+                  <p>Visit -&gt;</p>
+                </div>
+              </a>
+            </div>
+            <div><img class="select-none" src="/static/bundleappsmacbookpro-c43788265ef30a51714e92d9e69e5988.png"
+                alt="bundleapps"></div>
+          </div>
+        </li>
+        <li class="bg-secondary rounded-3xl relative overflow-hidden">
+          <div class="p-6 md:p-10">
+            <div><img class="w-full select-none"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXYAAABzCAYAAACM5CliAAAACXBIWXMAAAsTAAALEwEAmpwYAAAKWWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIiB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDE5LTA4LTAzVDIwOjI3OjE2KzAzOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDE5LTA5LTE2VDE4OjQ0OjQ5KzAzOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAxOS0wOS0xNlQxODo0NDo0OSswMzowMCIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpjY2YyNjE0Yi02MDI2LTBiNDUtOWI3Ny0zMTlkMWUzZDIxNzUiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDoyN2FkYmMwNC02MmU5LWEwNGUtODM2OC1kMDliMDBlY2I1ZmQiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3NGRhZWRiMC0zNDI0LWIxNGQtYTU1ZC0zZTQzMTgwOWI4ZmMiIHRpZmY6T3JpZW50YXRpb249IjEiIHRpZmY6WFJlc29sdXRpb249IjcyMDAwMC8xMDAwMCIgdGlmZjpZUmVzb2x1dGlvbj0iNzIwMDAwLzEwMDAwIiB0aWZmOlJlc29sdXRpb25Vbml0PSIyIiBleGlmOkNvbG9yU3BhY2U9IjEiIGV4aWY6UGl4ZWxYRGltZW5zaW9uPSI0MjQiIGV4aWY6UGl4ZWxZRGltZW5zaW9uPSI0MjQiPiA8cGhvdG9zaG9wOlRleHRMYXllcnM+IDxyZGY6QmFnPiA8cmRmOmxpIHBob3Rvc2hvcDpMYXllck5hbWU9IkFQSSIgcGhvdG9zaG9wOkxheWVyVGV4dD0iQVBJIi8+IDwvcmRmOkJhZz4gPC9waG90b3Nob3A6VGV4dExheWVycz4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo3NGRhZWRiMC0zNDI0LWIxNGQtYTU1ZC0zZTQzMTgwOWI4ZmMiIHN0RXZ0OndoZW49IjIwMTktMDgtMDNUMjA6Mjc6MTYrMDM6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MmY0MDc1ZTctMjMwZi1hMDRmLTk2ODItMGJiN2Q4NmQ0M2Q1IiBzdEV2dDp3aGVuPSIyMDE5LTA5LTE2VDE4OjQ0OjQ5KzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNvbnZlcnRlZCIgc3RFdnQ6cGFyYW1ldGVycz0iZnJvbSBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIHRvIGltYWdlL3BuZyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iZGVyaXZlZCIgc3RFdnQ6cGFyYW1ldGVycz0iY29udmVydGVkIGZyb20gYXBwbGljYXRpb24vdm5kLmFkb2JlLnBob3Rvc2hvcCB0byBpbWFnZS9wbmciLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmNjZjI2MTRiLTYwMjYtMGI0NS05Yjc3LTMxOWQxZTNkMjE3NSIgc3RFdnQ6d2hlbj0iMjAxOS0wOS0xNlQxODo0NDo0OSswMzowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyZjQwNzVlNy0yMzBmLWEwNGYtOTY4Mi0wYmI3ZDg2ZDQzZDUiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo0YWQyZjQ0Mi1kNTFjLWExNGQtOGYyNi1iZDY5YTMwM2MwNWMiIHN0UmVmOm9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3NGRhZWRiMC0zNDI0LWIxNGQtYTU1ZC0zZTQzMTgwOWI4ZmMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tl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"
+                alt="officeAPI"></div>
+            <div class="mt-9">
+              <p class="text-2xl lg:text-3xl font-extrabold text-primary mb-2">officeapi.dev</p>
+              <p class="text-secondary prose-lg mb-3">A fun side-project originally built with Spring Boot and MonogDb,
+                rebuilt with with Node.js, Express, Mongoose and MongoDb. Deployed with Heroku.</p><a
+                href="https://www.officeapi.dev/" target="_blank" rel="noreferrer">
+                <div
+                  class="inline-flex text-base sm:text-lg lg:text-base xl:text-lg font-medium transition-colors duration-200 focus:ring-2 focus:ring-offset-2 focus:ring-current focus:outline-none rounded-md text-orange hover:text-orange-hover mt-2">
+                  <p>Visit -&gt;</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="bg-secondary rounded-3xl overflow-hidden p-6 md:p-10 flex flex-col items-center">
+          <div class="flex-grow w-full space-y-2">
+            <div class="cursor-pointer transform ease-out duration-300 w-full">
+              <div class="w-full rounded-xl p-2 bg-emerald">
+                <div class="w-full bg-white rounded-md px-4 py-2 flex items-center">
+                  <div class="text-5xl text-emerald"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                      viewBox="0 0 20 20" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"></path>
+                    </svg></div>
+                  <div>
+                    <p class="ml-4 text-coolGray-900 font-semibold text-md tracking-tighter">Hi there!</p>
+                    <p class="ml-4 text-coolGray-400 font-semibold text-md tracking-tighter">Try dismissing me and see
+                      what happens...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cursor-pointer transform ease-out duration-300 w-full">
+              <div class="w-full rounded-xl p-2 bg-lightBlue-400">
+                <div class="w-full bg-white rounded-md px-4 py-2 flex items-center">
+                  <div class="text-5xl text-lightBlue-400"><svg stroke="currentColor" fill="currentColor"
+                      stroke-width="0" viewBox="0 0 20 20" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                        clip-rule="evenodd"></path>
+                    </svg></div>
+                  <div>
+                    <p class="ml-4 text-coolGray-900 font-semibold text-md tracking-tighter">Guess what?!</p>
+                    <p class="ml-4 text-coolGray-400 font-semibold text-md tracking-tighter">NgLimeade makes
+                      notifications super easy!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8">
+            <p class="text-2xl lg:text-3xl font-extrabold text-primary mb-2">NgLimeade</p>
+            <p class="text-coolGray-500 dark:text-coolGray-400 prose-lg mb-3">NgLimeade is an Angular Toast Library that
+              aims to get toast notifications up and running in less than a minute! No joke! Check it out for yourself!
+            </p><a href="https://www.npmjs.com/package/ng-limeade" target="_blank" rel="noreferrer">
+              <div
+                class="inline-flex text-base sm:text-lg lg:text-base xl:text-lg font-medium transition-colors duration-200 focus:ring-2 focus:ring-offset-2 focus:ring-current focus:outline-none rounded-md text-orange hover:text-orange-hover mt-2">
+                <p>Visit -&gt;</p>
+              </div>
+            </a>
+          </div>
+        </li> -->
+      </ul>
+    </section>
+  </main>
+</div>
+
+
+
+
+<!-- <div class="absolute bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 w-full">
+  <div class="absolute inset-0">
+    <div class="bg-white h-1/3 sm:h-2/3"></div>
+  </div>
+  <div class="relative max-w-7xl mx-auto">
+    <div class="text-center">
+      <h2 class="text-4xl leading-10 tracking-tight font-extrabold text-gray-900">From the blog</h2>
+      <p class="mt-5 max-w-2xl mx-auto text-xl leading-7 text-gray-500">Lorem Ipsum is simply dummy text of the
+        printing
+        and typesetting industry.</p>
+    </div>
+    <div class="cards mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
+      <card></card>
+      <card></card>
+      <card></card>
+      <card></card>
+      <card></card>
+      <card></card>
+      <card></card>
+    </div>
+  </div>
+</div> -->

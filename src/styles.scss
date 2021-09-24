@@ -1,1 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+$color-text-footer-icons:#a1a1aa;
+$color-text-footer-icons-hover:#71717a;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif ;
+}
+
+html{
+    scroll-padding-top: 80px;
+}
+
+body{
+    min-height: 100vh;
+    @apply bg-white;
+}
+
+/* Portfolio Styles */
+
+.social-icons {
+    height: auto;
+    position: fixed;
+    top: 50vh;
+    right: 30px;
+    transform: translateY(-50%);
+  }
+  
+  .toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .toggle-mode {
+    height: auto;
+    position: fixed;
+    top: 30px;
+    right: 32px;
+  }
+
+.ring-teal-500 {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(20,184,166,var(--tw-ring-opacity));
+}
+
+.text-teal-500{
+    --tw-ring-opacity: 1;
+    color: rgba(20,184,166,var(--tw-ring-opacity));
+}
+
+.text-footer-link {
+    color: #4b5563;
+    &:hover{
+        color: #1f2937;
+    }
+}
+
+.text-footer-icon {
+    color: $color-text-footer-icons;
+    &:hover{
+        color: $color-text-footer-icons-hover;
+    }
+}
+
+.prose-lg {
+    font-size: 1.125rem;
+    line-height: 1.7777778;
+}
+
+.to-lightBlue-500 {
+    --tw-gradient-to: #0ea5e9;
+}
+
+.from-cyan-400 {
+    --tw-gradient-from: #22d3ee;
+    --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to,rgba(34,211,238,0));
+}
