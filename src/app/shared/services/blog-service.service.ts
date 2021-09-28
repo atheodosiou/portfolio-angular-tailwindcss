@@ -39,4 +39,8 @@ export class BlogService {
   public updateArticleViews(id: string, views: number): Observable<any> {
     return this.http.put<any>(`${this.baseUrl}/articles/${id}`, { views: views });
   }
+
+  public getApps(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/apps/`);
+  }
 }

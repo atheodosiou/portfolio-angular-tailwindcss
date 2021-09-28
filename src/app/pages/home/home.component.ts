@@ -13,8 +13,9 @@ export class HomeComponent implements OnInit {
   isOpen: boolean = false;
   latestArticles: number = 3;
   constructor(private blogService: BlogService, private shareMetaService: ShareMetaService) { }
-
+  baseUrl=environment.baseUrl;
   articles$ = this.blogService.getAllArticles({ field: 'published_at', value: Sort.DESC }, this.latestArticles);
+  apps$ = this.blogService.getApps();
 
   ngOnInit() {
     this.shareMetaService.setMeta([

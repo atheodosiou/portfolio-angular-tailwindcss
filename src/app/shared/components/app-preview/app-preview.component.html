@@ -1,0 +1,19 @@
+<li class="bg-secondary rounded-3xl relative overflow-hidden">
+  <div class="p-6 md:p-10">
+    <div><img class="w-full select-none rounded-lg" src="{{baseUrl}}{{app?.image[0]?.formats?.large?.url}}"
+        alt="officeAPI"></div>
+    <div class="mt-9">
+      <p class="text-2xl lg:text-3xl font-extrabold text-primary mb-2">{{app?.title}}</p>
+      <p class="text-secondary prose-lg mb-3">{{app?.description}}</p>
+      <div
+        class="flex items-center justify-between  text-base sm:text-lg lg:text-base xl:text-lg font-medium transition-colors duration-200 focus:ring-2 focus:ring-offset-2 focus:ring-current focus:outline-none rounded-md text-yellow-500 hover:text-yellow-600 mt-2">
+        <a href="{{app?.url}}" target="_blank" rel="noreferrer">
+          <p class="flex items-center"><span class="mr-1">Visit</span> <i class="fas fa-angle-right"></i></p>
+        </a>
+        <a *ngIf="app?.github_repo_url" href="{{app?.github_repo_url}}" target="_blank" rel="noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</li>
