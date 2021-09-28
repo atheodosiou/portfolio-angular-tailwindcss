@@ -5,6 +5,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
+// Sharebuttons
+@import '~ngx-sharebuttons/themes/default';
+
 $color-text-footer-icons:#a1a1aa;
 $color-text-footer-icons-hover:#71717a;
 
@@ -92,4 +95,19 @@ body{
     &:hover{
         color: var(--color-text-emerald-hover);
     }
+}
+
+
+.text-secondary{
+    --color-text-secondary: #4b5563;
+    color: var(--color-text-secondary);
+}
+
+.text-primary {
+    --color-text-primary: #111827;
+    color: var(--color-text-primary);
+}
+
+.tracking-tight {
+    letter-spacing: -.025em;
 }

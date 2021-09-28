@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://cms.theodosiou.me'
+  baseUrl: 'https://cms.theodosiou.me',
+  website:'https://anastasios.theodosiou.me'
 };
 
 /*

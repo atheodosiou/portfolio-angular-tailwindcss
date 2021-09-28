@@ -4,7 +4,16 @@ import { PostComponent } from './post.component';
 import { RouterModule } from '@angular/router';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ShareButtonsConfig } from 'ngx-sharebuttons';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 
+const customConfig: ShareButtonsConfig = {
+  include: ['facebook', 'twitter', 'google','linkedin'],
+  exclude: ['tumblr', 'stumble', 'vk'],
+  theme: 'modern-light',
+  gaTracking: true,
+  twitterAccount: 'atheodosiou91'
+}
 
 @NgModule({
   imports: [
@@ -26,7 +35,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
           smartypants: false,
         },
       },
-    })
+    }),
+    ShareButtonsModule.withConfig(customConfig)
   ],
   declarations: [PostComponent]
 })
