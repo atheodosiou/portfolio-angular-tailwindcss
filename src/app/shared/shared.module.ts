@@ -1,8 +1,15 @@
+import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { CardComponent } from "./components/card/card.component";
+import { RouterModule } from "@angular/router";
+import { PostPreviewComponent } from "./components/post-preview/post-preview.component";
+
+const components = [
+    PostPreviewComponent
+];
 
 @NgModule({
-    declarations: [CardComponent],
-    exports: [CardComponent]
+    imports:[CommonModule, RouterModule],
+    declarations: [...components],
+    exports: [...components]
 })
 export class SharedModule { }

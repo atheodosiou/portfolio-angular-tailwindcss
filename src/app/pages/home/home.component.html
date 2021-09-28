@@ -22,13 +22,7 @@
       <p class="text-primary text-3xl sm:text-5xl lg:text-5xl leading-none font-extrabold tracking-tight mb-10">Some
         recent posts.</p>
         <!-- Posts -->
-      <div class="mb-10" *ngFor="let article of articles$|async">
-        <a routerLink="/blog/{{article?.slug}}">
-          <div>
-            <p class="text-xl lg:text-2xl font-extrabold text-primary">{{article?.title}}</p>
-            <p class="mt-2 text-secondary prose-lg">{{article?.description}}</p>
-          </div>
-        </a></div>
+      <post-preview *ngFor="let article of articles$|async" [article]="article"></post-preview>
      <!-- Subscribe to newletter -->
         <!-- <div class="mt-12">
         <section>

@@ -21,12 +21,5 @@
             </div>
         </div>
         <!-- Articles -->
-        <div class="mb-10" *ngFor="let article of articles">
-            <a routerLink="/blog/{{article?.slug}}">
-                <div>
-                    <p class="text-xl lg:text-2xl font-extrabold text-primary">{{article?.title}}</p>
-                    <p class="mt-2 text-secondary prose-lg">{{article?.description}}</p>
-                </div>
-            </a>
-        </div>
+        <post-preview *ngFor="let article of articles" [article]="article"></post-preview>
     </main>

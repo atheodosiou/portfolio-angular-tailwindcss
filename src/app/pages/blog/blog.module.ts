@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BlogComponent } from './blog.component';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
     },{
       path:':slag',
       loadChildren: ()=>import('../post/post.module').then(m=>m.PostModule)
-    }])
+    }]),
+    SharedModule
   ],
   declarations: [BlogComponent]
 })

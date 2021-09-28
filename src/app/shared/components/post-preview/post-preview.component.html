@@ -1,0 +1,18 @@
+<div class="mb-10">
+  <a routerLink="/blog/{{article?.slug}}">
+    <div>
+      <p class="text-xl lg:text-2xl font-extrabold text-primary">{{article?.title}}</p>
+      <div class="flex items-center justify-start">
+        <p *ngIf="article?.category?.name" class="text-sm text-indigo-500">{{article?.category?.name}} / </p>
+        <p class="text-sm text-secondary">{{article?.published_at | date:'longDate'}}</p>
+      </div>
+      <p class="mt-1 text-secondary prose-lg text-justify">{{article?.description}}</p>
+      <div *ngIf="article?.tags?.length" class="flex items-center mt-2">
+        <div *ngFor="let tag of article?.tags; let i=index;" [ngClass]="{'mr-2':i< article?.tags?.length}"
+          class="text-xs inline-flex items-center leading-xs uppercase px-2 bg-indigo-100 text-indigo-500 rounded-full">
+          {{tag?.name}}
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
