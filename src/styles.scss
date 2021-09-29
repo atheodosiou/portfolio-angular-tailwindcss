@@ -116,3 +116,14 @@ body{
     --color-bg-secondary: #f3f4f6;
     background-color: var(--color-bg-secondary);
 }
+
+span.mark{
+    @apply bg-red-200 text-red-500 rounded-md px-3;
+}
+
+a.link{
+  @apply text-indigo-500;
+  &:hover{
+    @apply text-indigo-700;
+  }  
+}

@@ -59,7 +59,7 @@
     </div>
 
     <p *ngIf="article[0]?.category?.name" class="mb-4 mr-2">
-      Written on <a class="text-emerald">{{article[0]?.category?.name}}</a>
+      Written on <a class="text-indigo-500 hover:text-indigo-700 cursor-pointer">{{article[0]?.category?.name}}</a>
     </p>
 
     <ng-container *ngIf="article[0]?.tags?.length">

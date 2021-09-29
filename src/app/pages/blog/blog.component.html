@@ -4,7 +4,7 @@
         <p class="text-primary text-3xl sm:text-5xl lg:text-5xl leading-none font-extrabold tracking-tight mb-8">
             Blogging is a conversation, not a code.</p>
         <div class="mb-12">
-            <search-input [delayMs]="500" (onSearch)="onSearch($event)"></search-input>
+            <search-input [delayMs]="250" (onSearch)="onSearch($event)"></search-input>
         </div>
         <post-preview *ngFor="let article of articles" [article]="article"></post-preview>
     </main>
