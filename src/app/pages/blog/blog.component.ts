@@ -12,7 +12,7 @@ export class BlogComponent implements OnInit {
 
   articles: any[] = [];
 
-  constructor(private blogService: BlogService, private shareMetaService:ShareMetaService) { }
+  constructor(private blogService: BlogService, private shareMetaService: ShareMetaService) { }
 
   ngOnInit() {
     this.shareMetaService.setMeta([
@@ -24,9 +24,13 @@ export class BlogComponent implements OnInit {
       }
     ]);
     this.blogService.getAllArticles().subscribe(res => {
-      console.log(res);
       this.articles = res;
     });
   }
 
+  onSearch(term: string) {
+    this.blogService.searchArticles(term).subscribe(res => {
+      this.articles = res;
+    });
+  }
 }

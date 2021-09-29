@@ -36,6 +36,10 @@ export class BlogService {
     return this.http.get<any>(`${this.baseUrl}/articles?slug=${slug}`);
   }
 
+  public searchArticles(term: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/articles?_where[_or][0][title_contains]=${term}&_where[_or][1][description_contains]=${term}`);
+  }
+
   public updateArticleViews(id: string, views: number): Observable<any> {
     return this.http.put<any>(`${this.baseUrl}/articles/${id}`, { views: views });
   }
