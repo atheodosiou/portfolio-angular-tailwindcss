@@ -72,14 +72,7 @@
     </ng-container>
 
     <div class="text-secondary prose-lg text-justify mb-2">
-      <markdown [data]="article[0]?.content" ngPreserveWhitespaces [line]="'2'" [lineOffset]="100"></markdown>
+      <markdown [data]="article[0]?.content" [line]="'2'" [lineOffset]="100"></markdown>
     </div>
-
-
-    <!-- <div class="my-10">
-      <share-buttons [theme]="'default'"
-        [include]="['facebook','twitter','linkedin','pinterest','reddit','tumblr','mix','viber','vk','telegram','messenger','whatsapp','xing','line','sms','email','print','copy']"
-        [show]="5" [url]="shareLink" [autoSetMeta]="false"></share-buttons>
-    </div> -->
   </main>
 </div>
