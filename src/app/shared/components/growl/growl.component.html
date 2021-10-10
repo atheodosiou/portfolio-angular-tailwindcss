@@ -7,7 +7,8 @@
         <i class="fas fa-info"></i>
       </span>
       <span class="font-semibold mr-2 text-left flex-auto">{{message}}</span>
-      <span class="font-semibold mr-2 text-left flex-auto hover: cursor-pointer" (click)="message=''"><i class="fas fa-times"></i></span>
+      <span *ngIf="type==='DANGER'" class="font-semibold mr-2 text-left flex-auto hover: cursor-pointer"
+        (click)="message=''"><i class="fas fa-times"></i></span>
     </div>
   </div>
 </ng-container>
