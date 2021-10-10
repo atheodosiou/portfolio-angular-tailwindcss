@@ -3,17 +3,19 @@ import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { AppPreviewComponent } from "./components/app-preview/app-preview.component";
+import { ContactFormComponent } from "./components/contact-form/contact-form.component";
 import { PostPreviewComponent } from "./components/post-preview/post-preview.component";
 import { SearchInputComponent } from "./components/search-input/search-input.component";
 
 const components = [
     PostPreviewComponent,
     AppPreviewComponent,
-    SearchInputComponent
+    SearchInputComponent,
+    ContactFormComponent
 ];
 
 @NgModule({
-    imports:[CommonModule, RouterModule, ReactiveFormsModule],
+    imports: [CommonModule, RouterModule, ReactiveFormsModule],
     declarations: [...components],
     exports: [...components]
 })

@@ -1,0 +1,13 @@
+<ng-container *ngIf="message && message.length>0">
+  <div class="text-center py-4 lg:px-4 mb-8">
+    <div [ngClass]="{'bg-green-500':type==='SUCCESS','bg-red-500':type==='DANGER'}"
+      class="p-2 items-center text-white leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+      <span [ngClass]="{'bg-green-400':type==='SUCCESS','bg-red-400':type==='DANGER'}"
+        class="flex rounded-full uppercase px-2 py-1 text-xs font-bold mr-3">
+        <i class="fas fa-info"></i>
+      </span>
+      <span class="font-semibold mr-2 text-left flex-auto">{{message}}</span>
+      <span class="font-semibold mr-2 text-left flex-auto hover: cursor-pointer" (click)="message=''"><i class="fas fa-times"></i></span>
+    </div>
+  </div>
+</ng-container>
