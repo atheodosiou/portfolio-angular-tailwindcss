@@ -3,25 +3,15 @@ import { CommonModule } from '@angular/common';
 import { PostComponent } from './post.component';
 import { RouterModule } from '@angular/router';
 import { MarkdownModule, MarkedOptions, MarkedRenderer } from 'ngx-markdown';
-import { HttpClient } from '@angular/common/http';
+import "prismjs";
+import "prismjs/components/prism-typescript.min.js";
+import "prismjs/components/prism-javascript.min.js";
+import "prismjs/components/prism-mongodb.min.js";
+import "prismjs/components/prism-markup.min.js";
+import "prismjs/components/prism-scss.min.js";
+import "prismjs/plugins/line-numbers/prism-line-numbers.js";
+import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js";
 
-// function that returns `MarkedOptions` with renderer override
-export function markedOptionsFactory(): MarkedOptions {
-  const renderer = new MarkedRenderer();
-
-  renderer.heading = (text: string, level: 1 | 2 | 3 | 4 | 5 | 6, raw: string, slugger: marked.Slugger) => {
-    return `<h${level}>${text}</h${level}>`;
-  };
-
-  return {
-    renderer: renderer,
-    gfm: true,
-    breaks: true,
-    pedantic: false,
-    smartLists: true,
-    smartypants: false,
-  };
-}
 
 @NgModule({
   imports: [
@@ -31,13 +21,7 @@ export function markedOptionsFactory(): MarkedOptions {
       pathMatch: 'full',
       component: PostComponent
     }]),
-    MarkdownModule.forRoot({
-      loader: HttpClient, // optional, only if you use [src] attribute
-      markedOptions: {
-        provide: MarkedOptions,
-        useValue: markedOptionsFactory
-      },
-    })
+    MarkdownModule.forRoot()
   ],
   declarations: [PostComponent]
 })

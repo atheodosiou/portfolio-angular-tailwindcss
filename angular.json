@@ -31,10 +31,10 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/@fortawesome/fontawesome-free/css/all.css",
               "node_modules/prismjs/themes/prism-okaidia.css",
               "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
               "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
               "src/styles.scss"
             ],
             "scripts": [
@@ -45,7 +45,8 @@
               "node_modules/prismjs/components/prism-cshtml.min.js",
               "node_modules/prismjs/components/prism-bash.min.js",
               "node_modules/prismjs/components/prism-mongodb.min.js",
-              "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.js"
+              "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.js",
+              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css"
             ]
           },
           "configurations": {
