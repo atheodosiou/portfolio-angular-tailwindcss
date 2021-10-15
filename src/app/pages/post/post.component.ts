@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BlogService } from 'src/app/shared/services/blog-service.service';
@@ -13,7 +13,8 @@ import { environment } from 'src/environments/environment';
 export class PostComponent implements OnInit {
 
   article: any;
-  featuredImageUrl: string='';
+  featuredImageUrl: string = '';
+  articleUrl: string = '';
 
   shareLink: string = `${environment.website}/blog/`;
   constructor(private blogService: BlogService, private activatedRoute: ActivatedRoute, private shareMetaService: ShareMetaService) {
@@ -40,14 +41,22 @@ export class PostComponent implements OnInit {
   ngOnInit() { }
 
   private setMetaForArticle(article: any[]) {
+    const url = `${environment.website}/blog/${article[0]?.slug}`;
+    this.articleUrl = url;
     this.shareMetaService.setMeta([
       {
         title: article[0]?.title,
         description: article[0]?.description,
         imageUrl: `${environment.baseUrl}${article[0]?.featured_image?.url}`,
-        url: `${environment.website}/blog/${article[0]?.slug}`
+        url: url
       }
     ]);
   }
 
+  scrolToShareButtons(el: HTMLElement | undefined) {
+    console.log("Scrol")
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

@@ -6,6 +6,7 @@ import { AppPreviewComponent } from "./components/app-preview/app-preview.compon
 import { ContactFormComponent } from "./components/contact-form/contact-form.component";
 import { PostPreviewComponent } from "./components/post-preview/post-preview.component";
 import { SearchInputComponent } from "./components/search-input/search-input.component";
+import { GetTagsPipe } from "./pipes/getTags.pipe";
 
 const components = [
     PostPreviewComponent,
@@ -14,9 +15,13 @@ const components = [
     ContactFormComponent
 ];
 
+const pipes = [
+    GetTagsPipe
+];
+
 @NgModule({
     imports: [CommonModule, RouterModule, ReactiveFormsModule],
-    declarations: [...components],
-    exports: [...components]
+    declarations: [...components, ...pipes],
+    exports: [...components, ...pipes]
 })
 export class SharedModule { }

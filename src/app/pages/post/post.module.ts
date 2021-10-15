@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PostComponent } from './post.component';
 import { RouterModule } from '@angular/router';
-import { MarkdownModule, MarkedOptions, MarkedRenderer } from 'ngx-markdown';
+import { MarkdownModule } from 'ngx-markdown';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+
 import "prismjs";
 import "prismjs/components/prism-typescript.min.js";
 import "prismjs/components/prism-javascript.min.js";
@@ -11,7 +14,7 @@ import "prismjs/components/prism-markup.min.js";
 import "prismjs/components/prism-scss.min.js";
 import "prismjs/plugins/line-numbers/prism-line-numbers.js";
 import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js";
-
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
@@ -21,7 +24,10 @@ import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js";
       pathMatch: 'full',
       component: PostComponent
     }]),
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(),
+    ShareButtonsModule,
+    ShareIconsModule,
+    SharedModule
   ],
   declarations: [PostComponent]
 })
