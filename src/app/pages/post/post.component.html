@@ -71,15 +71,18 @@
       </div>
     </ng-container>
 
-    <div class="text-secondary prose-lg text-justify mb-4">
+    <div class="text-secondary prose-lg text-justify mb-6">
       <markdown [data]="article[0]?.content" lineNumbers></markdown>
     </div>
 
-    <div #x>
+    <div #x class="mb-6">
       <share-buttons *ngIf="articleUrl!==''" [theme]="'default'" [include]="['facebook','twitter','linkedin','print']"
         [show]="4" [showText]="true" [url]="articleUrl" [title]="article[0]?.title" [autoSetMeta]="false"
         [description]="article[0]?.description" [image]="featuredImageUrl" [tags]="article[0]?.tags | getTags">
       </share-buttons>
     </div>
+
+    <disqus [identifier]="article[0]?.slug" [url]="articleUrl" [category]="'tech'" [language]="'en'"></disqus>
+    <!-- (newComment)="onComment($event)" (ready)="onReady($event)" (paginate)="onPaginate($event)" -->
   </main>
 </div>

@@ -6,15 +6,16 @@ import { MarkdownModule } from 'ngx-markdown';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 
-import "prismjs";
+import "prismjs/prism.js";
 import "prismjs/components/prism-typescript.min.js";
 import "prismjs/components/prism-javascript.min.js";
 import "prismjs/components/prism-mongodb.min.js";
 import "prismjs/components/prism-markup.min.js";
 import "prismjs/components/prism-scss.min.js";
 import "prismjs/plugins/line-numbers/prism-line-numbers.js";
-import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js";
 import { SharedModule } from 'src/app/shared/shared.module';
+import { DisqusModule, DisqusService } from 'ngx-disqus';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   imports: [
@@ -27,8 +28,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MarkdownModule.forRoot(),
     ShareButtonsModule,
     ShareIconsModule,
-    SharedModule
+    SharedModule,
+    DisqusModule.forRoot(environment.disqusShortname)
   ],
-  declarations: [PostComponent]
+  declarations: [PostComponent],
+  providers:[DisqusService]
 })
 export class PostModule { }
