@@ -159,3 +159,14 @@ h6{
     font-size: 1rem;
     font-weight: bold;
 }
+
+ol.ordered_list{
+    list-style:lower-latin;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
+
+    li.list_item{
+        font-style: italic;
+    }
+}

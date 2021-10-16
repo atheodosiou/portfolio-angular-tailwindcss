@@ -12,6 +12,9 @@ import "prismjs/components/prism-javascript.min.js";
 import "prismjs/components/prism-mongodb.min.js";
 import "prismjs/components/prism-markup.min.js";
 import "prismjs/components/prism-scss.min.js";
+import "prismjs/components/prism-bash.min.js"
+import "prismjs/components/prism-json.min.js"
+
 import "prismjs/plugins/line-numbers/prism-line-numbers.js";
 import { SharedModule } from 'src/app/shared/shared.module';
 import { DisqusModule, DisqusService } from 'ngx-disqus';
