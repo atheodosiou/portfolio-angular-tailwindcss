@@ -1,0 +1,7 @@
+<ul *ngIf="settings" class="flex flex-row">
+  <li *ngFor="let setting of settings" class="mr-2">
+    <a href="{{setting?.profileUrl}}" target="_blank">
+      <i class="text-footer-icon fa-lg hover:text-indigo-500 {{setting?.icon}}"></i>
+    </a>
+  </li>
+</ul>

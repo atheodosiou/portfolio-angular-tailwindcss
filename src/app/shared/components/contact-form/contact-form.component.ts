@@ -43,6 +43,7 @@ export class ContactFormComponent implements OnInit {
         type: GrowlType.SUCCESS,
         message: 'Thank you for reaching out! I will be back as soon as possible 😊'
       });
+      this.contactForm.reset();
     }).catch(e => {
       this.sendingMessage = false;
       this.growlService.show({
