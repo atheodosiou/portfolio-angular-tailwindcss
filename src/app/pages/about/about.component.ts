@@ -14,6 +14,7 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
     this.shareMetaService.setMeta([
       {
+        type:'website',
         title: 'Anastasios Theodosioiu | About',
         description: 'This is my personal portfolio and blog',
         imageUrl: `${environment.website}/uploads/anastasios_a7c12027e3.jpeg`,

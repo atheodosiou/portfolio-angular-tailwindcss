@@ -45,6 +45,7 @@ export class PostComponent implements OnInit {
     this.articleUrl = url;
     this.shareMetaService.setMeta([
       {
+        type:'article',
         title: article[0]?.title,
         description: article[0]?.description,
         imageUrl: `${environment.baseUrl}${article[0]?.featured_image?.url}`,
