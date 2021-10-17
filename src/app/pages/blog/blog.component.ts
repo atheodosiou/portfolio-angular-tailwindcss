@@ -15,15 +15,15 @@ export class BlogComponent implements OnInit {
   constructor(private blogService: BlogService, private shareMetaService: ShareMetaService) { }
 
   ngOnInit() {
-    // this.shareMetaService.setMeta([
-    //   {
-    //     type:'website',
-    //     title: 'Anastasios Theodosioiu | Blog',
-    //     description: 'This is my personal blog',
-    //     imageUrl: `${environment.website}/uploads/anastasios_a7c12027e3.jpeg`,
-    //     url: `${environment.website}/blog`
-    //   }
-    // ]);
+    this.shareMetaService.setMeta([
+      {
+        type:'website',
+        title: 'Anastasios Theodosiou | Blog',
+        description: 'This is my personal blog',
+        imageUrl: `${environment.website}/uploads/anastasios_a7c12027e3.jpeg`,
+        url: `${environment.website}/blog`
+      }
+    ]);
     this.blogService.getAllArticles().subscribe(res => {
       this.articles = res;
     });

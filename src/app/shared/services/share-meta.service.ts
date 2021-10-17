@@ -13,16 +13,37 @@ export class ShareMetaService {
 
   public setMeta(data: IShareMeta[]) {
     if (data?.length > 0) {
-      this.meta.removeTag("property='og:title'");
-      this.meta.removeTag("property='og:description'");
-      this.meta.removeTag("property='og:url'");
-      this.meta.removeTag("property='og:image'");
-      
       data.forEach(metaTag => {
-        this.meta.addTag({ property: "og:title", content: metaTag.title });
-        this.meta.addTag({ property: "og:description", content: metaTag.description });
-        this.meta.addTag({ property: "og:url", content: metaTag.url });
-        this.meta.addTag({ property: "og:image", content: metaTag.imageUrl });
+        if (this.meta.getTag("property='og:type'")) {
+          this.meta.updateTag({ property: 'og:type', content: metaTag.type }, 'property="og:type"');
+          console.log("Meta tag found and updated");
+        } else {
+          this.meta.addTag({ property: "og:type", content: metaTag.type });
+        }
+
+        if (this.meta.getTag("property='og:title'")) {
+          this.meta.updateTag({ property: 'og:title', content: metaTag.title }, 'property="og:title"');
+        } else {
+          this.meta.addTag({ property: "og:title", content: metaTag.title });
+        }
+
+        if (this.meta.getTag("property='og:description'")) {
+          this.meta.updateTag({ property: 'og:description', content: metaTag.description }, 'property="og:description"');
+        } else {
+          this.meta.addTag({ property: "og:description", content: metaTag.description });
+        }
+
+        if (this.meta.getTag("property='og:url'")) {
+          this.meta.updateTag({ property: 'og:url', content: metaTag.url }, 'property="og:url"');
+        } else {
+          this.meta.addTag({ property: "og:url", content: metaTag.url });
+        }
+
+        if (this.meta.getTag("property='og:image'")) {
+          this.meta.updateTag({ property: 'og:image', content: metaTag.imageUrl }, 'property="og:image"');
+        } else {
+          this.meta.addTag({ property: "og:image", content: metaTag.imageUrl });
+        }
       });
     }
   }
