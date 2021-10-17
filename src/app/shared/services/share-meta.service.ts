@@ -44,6 +44,32 @@ export class ShareMetaService {
         } else {
           this.meta.addTag({ property: "og:image", content: metaTag.imageUrl });
         }
+
+        //Twitter
+
+        if (this.meta.getTag("name='twitter:title'")) {
+          this.meta.updateTag({ name: 'twitter:title', content: metaTag.title }, 'name="twitter:title"');
+        } else {
+          this.meta.addTag({ name: "twitter:title", content: metaTag.title });
+        }
+
+        if (this.meta.getTag("name='twitter:description'")) {
+          this.meta.updateTag({ name: 'twitter:description', content: metaTag.description }, 'name="twitter:description"');
+        } else {
+          this.meta.addTag({ name: "twitter:description", content: metaTag.description });
+        }
+
+        if (this.meta.getTag("name='twitter:url'")) {
+          this.meta.updateTag({ name: 'twitter:url', content: metaTag.url }, 'name="twitter:url"');
+        } else {
+          this.meta.addTag({ name: "twitter:url", content: metaTag.url });
+        }
+
+        if (this.meta.getTag("name='twitter:image'")) {
+          this.meta.updateTag({ name: 'twitter:image', content: metaTag.imageUrl }, 'name="twitter:image"');
+        } else {
+          this.meta.addTag({ name: "twitter:image", content: metaTag.imageUrl });
+        }
       });
     }
   }
