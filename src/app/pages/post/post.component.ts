@@ -32,7 +32,7 @@ export class PostComponent implements OnInit {
           this.featuredImageUrl = `${environment.baseUrl}${article?.featured_image?.url}`;
         }
         this.article = article;
-        this.setMetaForArticle(article);
+        // this.setMetaForArticle(article);
         console.log(this.article);
       })
     });

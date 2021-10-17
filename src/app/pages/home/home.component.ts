@@ -18,14 +18,14 @@ export class HomeComponent implements OnInit {
   apps$ = this.blogService.getApps();
 
   ngOnInit() {
-    this.shareMetaService.setMeta([
-      {
-        type:'website',
-        title: 'Anastasios Theodosioiu | Home',
-        description: 'This is my personal portfolio and blog',
-        imageUrl: `${environment.website}/uploads/anastasios_a7c12027e3.jpeg`,
-        url: `${environment.website}/home`
-      }
-    ]);
+    // this.shareMetaService.setMeta([
+    //   {
+    //     type:'website',
+    //     title: 'Anastasios Theodosioiu | Home',
+    //     description: 'This is my personal portfolio and blog',
+    //     imageUrl: `${environment.website}/uploads/anastasios_a7c12027e3.jpeg`,
+    //     url: `${environment.website}/home`
+    //   }
+    // ]);
   }
 }
