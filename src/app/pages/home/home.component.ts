@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
       {
         title: 'Anastasios Theodosioiu | Home',
         description: 'This is my personal portfolio and blog',
-        imageUrl: '',
+        imageUrl: `${environment.website}/uploads/anastasios_a7c12027e3.jpeg`,
         url: `${environment.website}/home`
       }
     ]);

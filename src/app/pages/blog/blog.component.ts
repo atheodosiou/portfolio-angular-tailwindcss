@@ -19,7 +19,7 @@ export class BlogComponent implements OnInit {
       {
         title: 'Anastasios Theodosioiu | Blog',
         description: 'This is my personal blog',
-        imageUrl: '',
+        imageUrl: `${environment.website}/uploads/anastasios_a7c12027e3.jpeg`,
         url: `${environment.website}/blog`
       }
     ]);

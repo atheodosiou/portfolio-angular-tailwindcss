@@ -16,7 +16,7 @@ export class AboutComponent implements OnInit {
       {
         title: 'Anastasios Theodosioiu | About',
         description: 'This is my personal portfolio and blog',
-        imageUrl: `${environment.baseUrl}/uploads/anastasios_a7c12027e3.jpeg`,
+        imageUrl: `${environment.website}/uploads/anastasios_a7c12027e3.jpeg`,
         url: `${environment.website}/about`
       }
     ]);
