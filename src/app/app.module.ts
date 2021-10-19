@@ -18,7 +18,7 @@ import { SocialIconsComponent } from './shared/components/social-icons/social-ic
     SocialIconsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule
   ],
