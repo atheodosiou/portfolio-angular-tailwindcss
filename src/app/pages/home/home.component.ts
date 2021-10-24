@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { BlogService, Sort } from 'src/app/shared/services/blog-service.service';
 import { ShareMetaService } from 'src/app/shared/services/share-meta.service';
 import { environment } from 'src/environments/environment';
@@ -12,12 +13,13 @@ export class HomeComponent implements OnInit {
 
   isOpen: boolean = false;
   latestArticles: number = 3;
-  constructor(private blogService: BlogService, private shareMetaService: ShareMetaService) { }
+  constructor(private blogService: BlogService, private shareMetaService: ShareMetaService, private title:Title) { }
   baseUrl = environment.baseUrl;
   articles$ = this.blogService.getAllArticles({ field: 'published_at', value: Sort.DESC }, this.latestArticles);
   apps$ = this.blogService.getApps();
 
   ngOnInit() {
+    this.title.setTitle('Anastasios Theodosioiu | Home');
     this.shareMetaService.setMeta([
       {
         type: 'website',

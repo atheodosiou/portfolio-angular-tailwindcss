@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { BlogService } from 'src/app/shared/services/blog-service.service';
 import { ShareMetaService } from 'src/app/shared/services/share-meta.service';
 import { environment } from 'src/environments/environment';
@@ -12,12 +13,13 @@ export class BlogComponent implements OnInit {
 
   articles: any[] = [];
 
-  constructor(private blogService: BlogService, private shareMetaService: ShareMetaService) { }
+  constructor(private blogService: BlogService, private shareMetaService: ShareMetaService, private title: Title) { }
 
   ngOnInit() {
+    this.title.setTitle('Anastasios Theodosioiu | Blog');
     this.shareMetaService.setMeta([
       {
-        type:'website',
+        type: 'website',
         title: 'Anastasios Theodosiou | Blog',
         description: 'This is my personal blog',
         imageUrl: `${environment.website}/uploads/anastasios_a7c12027e3.jpeg`,

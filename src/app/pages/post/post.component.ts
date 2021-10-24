@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BlogService } from 'src/app/shared/services/blog-service.service';
@@ -17,7 +18,7 @@ export class PostComponent implements OnInit {
   articleUrl: string = '';
 
   shareLink: string = `${environment.website}/blog/`;
-  constructor(private blogService: BlogService, private activatedRoute: ActivatedRoute, private shareMetaService: ShareMetaService) {
+  constructor(private blogService: BlogService, private activatedRoute: ActivatedRoute, private shareMetaService: ShareMetaService, private title: Title) {
     this.activatedRoute.params.subscribe(params => {
       this.blogService.getArticleBySlug(params?.slag).subscribe(article => {
         this.shareLink += article[0].slug;
@@ -43,9 +44,10 @@ export class PostComponent implements OnInit {
   private setMetaForArticle(article: any[]) {
     const url = `${environment.website}/blog/${article[0]?.slug}`;
     this.articleUrl = url;
+    this.title.setTitle('Anastasios Theodosiou | '+article[0]?.title,);
     this.shareMetaService.setMeta([
       {
-        type:'article',
+        type: 'article',
         title: article[0]?.title,
         description: article[0]?.description,
         imageUrl: `${environment.baseUrl}${article[0]?.featured_image?.url}`,
