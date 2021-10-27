@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BlogService } from 'src/app/shared/services/blog-service.service';
+import { CanonicalService } from 'src/app/shared/services/canonical.service';
 import { ShareMetaService } from 'src/app/shared/services/share-meta.service';
 import { environment } from 'src/environments/environment';
 
@@ -18,7 +19,8 @@ export class PostComponent implements OnInit {
   articleUrl: string = '';
 
   shareLink: string = `${environment.website}/blog/`;
-  constructor(private blogService: BlogService, private activatedRoute: ActivatedRoute, private shareMetaService: ShareMetaService, private title: Title) {
+  constructor(private blogService: BlogService, private activatedRoute: ActivatedRoute,
+    private shareMetaService: ShareMetaService, private title: Title, private canonicalService: CanonicalService) {
     this.activatedRoute.params.subscribe(params => {
       this.blogService.getArticleBySlug(params?.slag).subscribe(article => {
         this.shareLink += article[0].slug;
@@ -44,7 +46,8 @@ export class PostComponent implements OnInit {
   private setMetaForArticle(article: any[]) {
     const url = `${environment.website}/blog/${article[0]?.slug}`;
     this.articleUrl = url;
-    this.title.setTitle('Anastasios Theodosiou | '+article[0]?.title,);
+    this.title.setTitle('Anastasios Theodosiou | ' + article[0]?.title,);
+    this.canonicalService.setCanonicalUrl();
     this.shareMetaService.setMeta([
       {
         type: 'article',

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { CanonicalService } from 'src/app/shared/services/canonical.service';
 import { ShareMetaService } from 'src/app/shared/services/share-meta.service';
 import { environment } from 'src/environments/environment';
 
@@ -10,10 +11,11 @@ import { environment } from 'src/environments/environment';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private shareMetaService: ShareMetaService, private title:Title) { }
+  constructor(private shareMetaService: ShareMetaService, private title:Title, private canonicalService:CanonicalService) { }
 
   ngOnInit() {
     this.title.setTitle('Anastasios Theodosioiu | About');
+    this.canonicalService.setCanonicalUrl();
     this.shareMetaService.setMeta([
       {
         type: 'website',
