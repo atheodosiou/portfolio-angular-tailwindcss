@@ -45,6 +45,6 @@ export class BlogService {
   }
 
   public getApps(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/apps/`);
+    return this.http.get<any[]>(`${this.baseUrl}/apps?_sort=sortBy:ASC`);
   }
 }
