@@ -1,14 +1,41 @@
 <nav
   class="sticky top-0 z-30 flex justify-center items-center w-full px-4 py-4 my-0 mb-8 backdrop-filter backdrop-blur-lg bg-opacity-10 firefox:bg-opacity-90 border-b border-primary dark:border-gray-600">
   <div class="flex justify-between items-center max-w-2xl w-full">
-    <div class="text-primary dark:text-white font-semibold">
-      <a aria-current="page" class="cursor-pointer" routerLink="/">Anastasios Theodosiou</a>
+    <div class="text-primary dark:text-white">
+      <a aria-current="page" class="font-semibold" routerLink="/">Anastasios Theodosiou</a>
     </div>
     <div class="flex items-center space-x-4 justify-evenly text-primary dark:text-white">
-      <a aria-current="page" class="cursor-pointer" routerLink="/">Home</a>
-      <a class="cursor-pointer" routerLink="/about">About</a>
-      <a class="cursor-pointer" routerLink="/blog">Blog</a>
-      <a class="cursor-pointer" routerLink="/contact">Contact</a>
+      <a aria-current="page" class="hidden md:block" routerLink="/">Home</a>
+      <a class="block md:hidden" routerLink="/">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+      </a>
+      <a class="hidden md:block" routerLink="/about">About</a>
+      <a class="block md:hidden" routerLink="/about">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </a>
+
+      <a class="hidden md:block" routerLink="/blog">Blog</a>
+      <a class="block md:hidden" routerLink="/blog">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      </a>
+
+
+      <a class="hidden md:block" routerLink="/contact">Contact</a>
+      <a class="block md:hidden" routerLink="/contact">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </a>
+
       <button type="button" class="rounded-md p-2 bg-secondary dark:bg-grey-1000" (click)="toggleTheme()">
         <ng-container *ngTemplateOutlet="lightTheme?moon:sun"></ng-container>
       </button>
@@ -24,7 +51,8 @@
 </ng-template>
 
 <ng-template #sun>
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-secondary dark:text-white text-2xl cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-secondary dark:text-white text-2xl cursor-pointer"
+    fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
       d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
   </svg>
