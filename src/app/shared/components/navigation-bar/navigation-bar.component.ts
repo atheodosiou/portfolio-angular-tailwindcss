@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'navigation-bar',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationBarComponent implements OnInit {
 
-  constructor() { }
+  lightTheme: boolean = true;
+
+  constructor(private themeService: ThemeService) { }
 
   ngOnInit() {
   }
 
+  toggleTheme() {
+    this.lightTheme = !this.lightTheme;
+    this.themeService.toggleTheme();
+  }
 }

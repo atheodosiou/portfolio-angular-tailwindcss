@@ -1,7 +1,7 @@
 <div *ngIf="article" class="min-h-screen px-4 mx-auto max-w-screen-sm md:max-w-2xl flex flex-col">
   <main class="flex-grow">
     <div class="mb-2">
-      <h1 class="font-bold text-3xl md:text-5xl tracking-tight mb-4 md:mb-6 text-primary">{{article[0]?.title}}</h1>
+      <h1 class="font-bold text-3xl md:text-5xl tracking-tight mb-4 md:mb-6 text-primary dark:text-white">{{article[0]?.title}}</h1>
     </div>
 
     <!-- <p *ngIf="article[0]?.category?.name" class="text-sm text-secondary mr-2 mb-2">
@@ -17,14 +17,14 @@
 
           <p class="text-sm text-secondary ml-2"><a class="text-emerald"
               routerLink="/about">{{article[0]?.author?.first_name}} {{article[0]?.author?.last_name}}</a> /
-            {{article[0]?.published_at | date:'longDate'}}</p>
+            <span class="dark:text-gray-300">{{article[0]?.published_at | date:'longDate'}}</span></p>
 
         </div>
 
         <div class="flex items-center sm:block md:hidden">
           <div class="relative inline-block text-left">
             <div><button
-                class="bg-primary rounded-full flex items-center text-gray-400 dark:text-coolGray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-coolGray-900 focus:ring-emerald-500"
+                class="bg-primary rounded-full flex items-center text-gray-400 dark:text-gray-300 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-coolGray-900 focus:ring-emerald-500"
                 id="headlessui-menu-button-1" type="button" aria-haspopup="true"><span class="sr-only">Open
                   options</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                   class="h-5 w-5" aria-hidden="true">
@@ -35,9 +35,9 @@
           </div>
         </div>
       </div>
-      <div class="text-sm flex space-x-2 text-secondary mt-2 md:mt-0">
+      <div class="text-sm flex space-x-2 text-secondary dark:text-gray-300 mt-2 md:mt-0">
         <p>{{article[0]?.minutes_read}} minute read</p>
-        <p>•</p><span class="text-sm text-secondary min-w-32">{{article[0]?.views}} views</span> <span
+        <p>•</p><span class="text-sm text-secondary dark:text-gray-300 min-w-32">{{article[0]?.views}} views</span> <span
           class="hidden md:block">
           <div class="relative inline-block text-left">
             <div><button (click)="scrolToShareButtons(x)"
@@ -58,7 +58,7 @@
       <img [src]="featuredImageUrl" alt="{{article[0]?.featured_image?.alternativeText || 'Featured Image'}}" />
     </div>
 
-    <p *ngIf="article[0]?.category?.name" class="mb-4 mr-2">
+    <p *ngIf="article[0]?.category?.name" class="mb-4 mr-2 dark:text-gray-300">
       Written on <a class="text-indigo-500 hover:text-indigo-700 cursor-pointer">{{article[0]?.category?.name}}</a>
     </p>
 
@@ -71,7 +71,7 @@
       </div>
     </ng-container>
 
-    <div class="text-secondary prose-lg text-justify mb-6">
+    <div class="text-secondary prose-lg text-justify mb-6 dark:text-gray-300">
       <markdown [data]="article[0]?.content" lineNumbers></markdown>
     </div>
 
