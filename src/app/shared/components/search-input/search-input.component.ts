@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
@@ -9,12 +9,12 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class SearchInputComponent implements OnInit {
 
-  inputForm: FormGroup;
+  inputForm: UntypedFormGroup;
   @Input() delayMs: number = 0;
   @Output() onSearch: EventEmitter<string> = new EventEmitter<string>();
 
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: UntypedFormBuilder) {
     this.inputForm = this.fb.group({
       term: ['']
     });

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { GrowlType } from '../../models/growl.model';
 import { EmailService } from '../../services/email.service';
 import { GrowlService } from '../../services/growl.service';
@@ -11,10 +11,10 @@ import { GrowlService } from '../../services/growl.service';
 })
 export class ContactFormComponent implements OnInit {
 
-  contactForm: FormGroup;
+  contactForm: UntypedFormGroup;
   sendingMessage: boolean = false;
 
-  constructor(private fb: FormBuilder, private emailService: EmailService, private growlService: GrowlService) {
+  constructor(private fb: UntypedFormBuilder, private emailService: EmailService, private growlService: GrowlService) {
     this.contactForm = this.createForm();
   }
 
@@ -22,7 +22,7 @@ export class ContactFormComponent implements OnInit {
   }
 
 
-  private createForm(): FormGroup {
+  private createForm(): UntypedFormGroup {
     return this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(3)]],
       lastName: ['', [Validators.required, Validators.minLength(3)]],
