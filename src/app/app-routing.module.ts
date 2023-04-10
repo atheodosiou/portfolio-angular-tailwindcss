@@ -18,6 +18,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/about/about.module').then((m) => m.AboutModule),
   },
+  // {
+  //   path: 'apps',
+  //   loadChildren: () =>
+  //     import('./pages/apps/apps.module').then((m) => m.AppsModule),
+  // },
   {
     path: 'contact',
     loadChildren: () =>
